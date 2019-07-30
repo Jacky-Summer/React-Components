@@ -1,0 +1,35 @@
+.con-wrapper button{
+    display: block;
+    border: none;
+    background: none;
+    outline:none; 
+}
+.btn-switch{
+    border: none;
+    background-color: #bfbfbf;
+    outline:none;
+  }
+  
+  .switch-wrapper{
+    width: 70px;
+    height:30px;
+    border-radius: 15px;
+    background-color: #bfbfbf;
+  }
+  
+  .switch-circle{
+    width: 30px;
+    height:30px;
+    border-radius: 15px;
+    background: #fff;
+    transition-duration: .1s;
+    margin: 1px;
+  }
+  
+  .btn-switch-checked .switch-wrapper{
+    background-color: #0096fb;
+  }
+  
+  .btn-switch-checked .switch-circle {
+    transform: translateX(38px);
+  }
