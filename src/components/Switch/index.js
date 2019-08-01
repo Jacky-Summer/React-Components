@@ -3,14 +3,16 @@ import { connect } from 'react-redux'
 import './style.css'
 class Switch extends Component {
     render() {
-        const { checked,disabled,switchChange } = this.props;
+        const { checked,disabled,switchChange,toggleDisable } = this.props;
         return (
             <div className="con-wrapper">
                 <button
                     disabled={disabled}
                     onClick={()=>switchChange(checked)}
                     className={
-                        checked  ? "btn-switch-checked" : "btn-switch"
+                        checked 
+                        ? (disabled ? "btn-switch-checked-disabled" : "btn-switch-checked")
+                        : (disabled ? "btn-switch-disabled" : "btn-switch" ) 
                     }
                 >
                     
@@ -18,6 +20,7 @@ class Switch extends Component {
                         <div className="switch-circle"></div>
                     </div>
                 </button>
+                <button className="toggle" onClick={() => toggleDisable(disabled)}>Toggle Disable</button>
             </div>
         );
     }
@@ -34,6 +37,13 @@ const mapDispatch = (dispatch) => {
             const action = {
                 type:'change_switch_checked',
                 isChecked
+            }
+            dispatch(action)
+        },
+        toggleDisable(isDisabled){
+            const action = {
+                type:'toggle_disbable',
+                isDisabled
             }
             dispatch(action)
         }

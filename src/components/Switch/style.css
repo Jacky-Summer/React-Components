@@ -1,4 +1,4 @@
-.con-wrapper button{
+.con-wrapper button:first-child{
     display: block;
     border: none;
     background: none;
@@ -32,4 +32,31 @@
   
   .btn-switch-checked .switch-circle {
     transform: translateX(38px);
+  }
+
+  .btn-switch-disabled {
+    border: none;
+    background: none;
+    cursor: not-allowed;
+  }
+  
+  .btn-switch-checked-disabled {
+    border: none;
+    background: none;
+    cursor: not-allowed;
+  }
+  
+  .btn-switch-disabled .switch-wrapper{
+    background: #bfbfbf;
+  }
+  
+  .btn-switch-checked-disabled .switch-wrapper{
+    background: #bfbfbf;
+  }
+  
+  .toggle{
+    background: #0096fb;
+    color: #fff;
+    margin-top: 10px;
+    height: 30px;
   }
